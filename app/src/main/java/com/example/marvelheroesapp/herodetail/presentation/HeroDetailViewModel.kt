@@ -3,7 +3,7 @@ package com.example.marvelheroesapp.herodetail.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.example.marvelheroesapp.data.repository.MarvelHeroDetailRepository
-import com.example.marvelheroesapp.data.utils.ApiUtils
+import com.example.marvelheroesapp.utils.GeneralUtils
 import com.example.marvelheroesapp.data.utils.Resource
 import kotlinx.coroutines.Dispatchers
 
@@ -17,7 +17,7 @@ class HeroDetailViewModel(
         try {
             emit(Resource.success(data = marvelHeroDetailRepository.getMarvelHeroDetail()))
         } catch (exception: Exception) {
-            emit(Resource.error(data = null, message = exception.message ?: ApiUtils.UNKNOWN_ERROR))
+            emit(Resource.error(data = null, message = exception.message ?: GeneralUtils.UNKNOWN_ERROR))
         }
     }
 }

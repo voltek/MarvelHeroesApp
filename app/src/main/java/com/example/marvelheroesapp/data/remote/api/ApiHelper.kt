@@ -9,7 +9,6 @@ import java.util.concurrent.TimeUnit
 
 object ApiHelper {
 
-
     private val httpLoggingInterceptor = HttpLoggingInterceptor()
         .setLevel(HttpLoggingInterceptor.Level.BODY)
 

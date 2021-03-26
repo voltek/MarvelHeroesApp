@@ -3,7 +3,8 @@ package com.example.marvelheroesapp.data.remote.api.providers
 import com.example.marvelheroesapp.data.remote.api.ApiEndpoint
 import com.example.marvelheroesapp.data.remote.api.ApiHelper
 import com.example.marvelheroesapp.data.remote.api.services.MarvelHeroDetailService
-import com.example.marvelheroesapp.data.utils.ApiUtils
+import com.example.marvelheroesapp.data.remote.model.general.MarvelHeroesResponse
+import com.example.marvelheroesapp.utils.GeneralUtils
 
 class MarvelHeroDetailProvider {
 
@@ -11,11 +12,11 @@ class MarvelHeroDetailProvider {
         ApiHelper.createRetrofitConnection().create(MarvelHeroDetailService::class.java)
     }
 
-    suspend fun getMarvelHeroDetail(marvelHeroId: String) {
-        val timeStamp = ApiUtils().getCurrentTimeStampInSeconds()
-        val hash = ApiUtils().getMD5Hash(timeStamp)
+    suspend fun getMarvelHeroDetail(marvelHeroId: String) : MarvelHeroesResponse {
+        val timeStamp = GeneralUtils.getCurrentTimeStampInSeconds()
+        val hash = GeneralUtils.getMD5Hash(timeStamp)
 
-        marvelHeroDetailService.getCharacterDetail(
+        return marvelHeroDetailService.getCharacterDetail(
             marvelHeroId, timeStamp,
             ApiEndpoint.PRIVATE_API_KEY, hash
         )

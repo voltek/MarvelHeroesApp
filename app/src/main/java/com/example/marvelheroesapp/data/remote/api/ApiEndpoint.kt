@@ -9,10 +9,10 @@ object ApiEndpoint {
 
     private const val API_VERSION = "v1/"
 
-    private const val PREFIX = "{$API_VERSION}public/"
+    private const val PREFIX = "v1/public/"
 
-    const val CHARACTERS = "{$PREFIX}characters"
+    const val CHARACTERS = "v1/public/characters"
 
-    const val CHARACTERS_DETAIL = "{$PREFIX}characters/"
+    const val CHARACTERS_DETAIL = "v1/public/characters/"
 
 }

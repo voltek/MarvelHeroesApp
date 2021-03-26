@@ -3,7 +3,7 @@ package com.example.marvelheroesapp.heroeslist.presentation.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.example.marvelheroesapp.data.repository.MarvelHeroesListRepository
-import com.example.marvelheroesapp.data.utils.ApiUtils.Companion.UNKNOWN_ERROR
+import com.example.marvelheroesapp.utils.GeneralUtils.Companion.UNKNOWN_ERROR
 import com.example.marvelheroesapp.data.utils.Resource
 import kotlinx.coroutines.Dispatchers
 
